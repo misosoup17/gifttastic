@@ -1,3 +1,5 @@
+var dogs = ["Poodle","Beagle","Husky","Pitbull"]
+
 $(document).ready(function() {
   function renderButtons() {
     // (this is necessary otherwise we will have repeat buttons)
