@@ -1,55 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 <head>
-  <title>Actors Gifs</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <meta charset="utf-8">
+    <title> Atheltic and Sports Gif </title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="jumbotron">
     <div class="container">
-      <h1>Giphy assignment!!</h1>
-    </div>
-  </div>
-
-  <div id="gifButtons" class="container">
-  </div>
-
-  <div class="container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <!-- Gifs  -->
-      <div id="gifsView"></div>
-    </div>
-    <!-- Action Submission Form  -->
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <form id="gif-form" role="form">
-        <h2>
-          <legend>Submission</legend>
-        </h2>
-        <div class="form-group">
-          <label for="act-input">Add your button here</label>
-          <input type="text" id="act-input">
+        <div class="row">
+            <div class="col-md-9">
+                <div id="sportButtons"></div>
+            </div>
+            <div class="col-md-3">
+                <form id="sport-form">
+                    <label for="sport-input">Add a Sport:</label>
+                    <input type="text" id="sport-input">
+                    <input id="addSport" type="submit" value="submit">
+                </form>
+            </div>
         </div>
-        <input id="addGif" type="submit" value="Add your button" class="btn btn-primary">
-        <input id="removeGif" type="submit" value="Remove last button" class="btn btn-primary">
-      </form>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="sports"></div>
+            </div>
+        </div>
     </div>
-  </div>
-  <footer>
-    <div id="footer" class="container">
-      <h4 id="copyright">&copy; Copyright 2019 Misa Gaspar</h4>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <script type="text/javascript" src="./assets/gif.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
