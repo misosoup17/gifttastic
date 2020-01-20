@@ -1,5 +1,4 @@
-var dogs = ["Poodle","Beagle","Husky","Pitbull"]
-
+var dogs = ["Poodle","Beagle","Husky","Pitbull"];
 $(document).ready(function() {
   function renderButtons() {
     // (this is necessary otherwise we will have repeat buttons)
@@ -40,4 +39,50 @@ $(document).ready(function() {
   $("#buttons-view").on("click", ".btn", function() {
     // console.log("AM I CLICKING??");
 
-  
+    var gif = $(this).text();
+    // console.log(gif);
+    var queryURL =
+      "https://api.giphy.com/v1/gifs/search?q=" +
+      gif +
+      "&api_key=ZbFv1QLdaqNWXNLqEW1243d9SAx2cJmr&limit=10";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      var results = response.data;
+      console.log(results); //to check on if ajax is working
+      for (var i = 0; i < results.length; i++) {
+        var gifDiv = $("<div>");
+
+        var rating = results[i].rating;
+
+        var p = $("<p>").text("Rating: " + rating);
+
+        var dogImage = $("<img>");
+        dogImage.attr("src", results[i].images.fixed_height.url);
+        dogImage.attr("data-state", "animated");
+        dogImage.attr("data-animate", results[i].images.fixed_height.url);
+        dogImage.attr("data-still", results[i].images.fixed_height_still.url);
+        dogImage.addClass("gif");
+
+        gifDiv.append(p);
+        gifDiv.append(dogImage);
+        $("#gifs-here").prepend(gifDiv);
+      }
+    });
+  });
+  $("#gifs-here").on("click", ".gif", function() {
+    console.log("this is my gif!!", $(this).data());
+
+    if ($(this).data().state === "still") {
+      console.log("GO MAKE IT ANIMATED!!!");
+      $(this).data().state = "animated";
+      $(this).attr("src", $(this).data().animate);
+    } else if ($(this).data().state === "animated") {
+      console.log("MAKE IT STILL!!");
+      $(this).data().state = "still";
+      $(this).attr("src", $(this).data().still);
+    }
+  });
+});
